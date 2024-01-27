@@ -7,10 +7,7 @@
       [cSidebarToggle]="sidebarId"
       class="ps-1"
     >
-      <svg cIcon
-        name="cilMenu"
-        size="lg"
-      ></svg>
+      <svg cIcon name="cilMenu" size="lg"></svg>
     </button>
     <c-header-nav class="d-none d-lg-flex me-auto">
       <c-nav-item>
@@ -48,7 +45,6 @@
     <c-header-nav class="ms-3">
       <ng-container *ngTemplateOutlet="userDropdown"></ng-container>
     </c-header-nav>
-
   </c-container>
   <c-header-divider></c-header-divider>
   <c-container [fluid]="true">
@@ -59,13 +55,7 @@
 
 <ng-template #userDropdown>
   <c-dropdown alignment="end" variant="nav-item">
-    <button
-      cButton
-      color=""
-      [caret]="false"
-      cDropdownToggle
-      class="py-0"
-    >
+    <button cButton color="" [caret]="false" cDropdownToggle class="py-0">
       <c-avatar
         cTextColor="primary"
         shape="rounded-1"
@@ -152,14 +142,20 @@
       <li>
         <hr cDropdownDivider/>
       </li> -->
-      <li>
-        <a routerLink="./" cDropdownItem>
+      <li *ngIf="user === undefined">
+        <a routerLink="/login" cDropdownItem>
           <svg cIcon class="me-2" name="cilLockLocked"></svg>
-          Log Out
+          Log In
         </a>
       </li>
-      <li></li>
+      <li *ngIf="user !== undefined">
+        <span>{{ user?.email }}</span>
+        <button type="submit" (click)="onLogout()" class="btn btn-xs btn-primary">Logout</button>
+        <!-- <a routerLink="./" cDropdownItem>
+          <svg cIcon class="me-2" name="cilLockLocked"></svg>
+          Log Out
+        </a> -->
+      </li>
     </ul>
   </c-dropdown>
 </ng-template>
-

@@ -18,7 +18,8 @@
               id="name"
               placeholder="Name"
               type="text"
-              [(ngModel)]="model.name" [ngModelOptions]="{standalone: true}"
+              [(ngModel)]="model.name"
+              [ngModelOptions]="{ standalone: true }"
             />
           </div>
           <div class="mb-3">
@@ -27,7 +28,8 @@
               cFormControl
               id="description"
               rows="3"
-              [(ngModel)]="model.description" [ngModelOptions]="{standalone: true}"
+              [(ngModel)]="model.description"
+              [ngModelOptions]="{ standalone: true }"
             ></textarea>
           </div>
           <div class="mb-3">
@@ -37,13 +39,12 @@
               id="imageUrl"
               placeholder="Image Url"
               type="text"
-              [(ngModel)]="model.imageUrl" [ngModelOptions]="{standalone: true}"
+              [(ngModel)]="model.imageUrl"
+              [ngModelOptions]="{ standalone: true }"
             />
           </div>
           <div class="mb-3">
-            <button cButton class="mb-3" type="submit">
-                Submit
-              </button>
+            <button cButton class="mb-3" type="submit">Submit</button>
           </div>
         </form>
       </c-card-body>

@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 import { navItems } from './_nav';
 
 @Component({
@@ -15,5 +14,6 @@ export class DefaultLayoutComponent {
     suppressScrollX: true,
   };
 
-  constructor() {}
+  constructor() { }
+
 }
