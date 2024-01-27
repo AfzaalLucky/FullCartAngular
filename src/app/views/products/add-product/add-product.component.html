@@ -1,0 +1,41 @@
+<c-row ngPreserveWhitespaces>
+  <c-col xs="12">
+    <div class="d-flex justify-content-end mt-3 mb-3">
+      <a routerLink="/products/products-list" class="btn btn-primary">Products List</a>
+    </div>
+  </c-col>
+    <c-col xs="12">
+      <c-card class="mb-4">
+        <c-card-header>
+          <strong>Product Form</strong>
+        </c-card-header>
+        <c-card-body>
+          <form cForm>
+            <div class="mb-3">
+              <label cLabel for="exampleFormControlInput1">Name</label>
+              <input
+                cFormControl
+                id="exampleFormControlInput1"
+                placeholder="name@example.com"
+                type="email"
+              />
+            </div>
+            <div class="mb-3">
+              <label cLabel for="exampleFormControlTextarea1">Description</label>
+              <textarea
+                cFormControl
+                id="exampleFormControlTextarea1"
+                rows="3"
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <button cButton class="mb-3" type="submit">
+                  Submit
+                </button>
+            </div>
+          </form>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+  

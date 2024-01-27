@@ -1,0 +1,52 @@
+<c-row ngPreserveWhitespaces>
+  <c-col xs="12">
+    <div class="d-flex justify-content-end mt-3 mb-3">
+      <a routerLink="/brands/brand-list" class="btn btn-primary">Brand List</a>
+    </div>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Brand Form</strong>
+      </c-card-header>
+      <c-card-body>
+        <form cForm #form="ngForm" (ngSubmit)="onFormSubmit()">
+          <div class="mb-3">
+            <label cLabel for="name">Name</label>
+            <input
+              cFormControl
+              id="name"
+              placeholder="Name"
+              type="text"
+              [(ngModel)]="model.name" [ngModelOptions]="{standalone: true}"
+            />
+          </div>
+          <div class="mb-3">
+            <label cLabel for="description">Description</label>
+            <textarea
+              cFormControl
+              id="description"
+              rows="3"
+              [(ngModel)]="model.description" [ngModelOptions]="{standalone: true}"
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label cLabel for="name">Image Url</label>
+            <input
+              cFormControl
+              id="imageUrl"
+              placeholder="Image Url"
+              type="text"
+              [(ngModel)]="model.imageUrl" [ngModelOptions]="{standalone: true}"
+            />
+          </div>
+          <div class="mb-3">
+            <button cButton class="mb-3" type="submit">
+                Submit
+              </button>
+          </div>
+        </form>
+      </c-card-body>
+    </c-card>
+  </c-col>
+</c-row>

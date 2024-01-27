@@ -1,0 +1,42 @@
+<c-row ngPreserveWhitespaces>
+  <c-col xs="12">
+    <div class="d-flex justify-content-end mt-3 mb-3">
+      <a routerLink="/brands/add-brand" class="btn btn-primary">Add Brand</a>
+    </div>
+  </c-col>
+  <c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Brands List</strong>
+      </c-card-header>
+      <c-card-body>
+        <ng-container *ngIf="brands">
+          <table cTable>
+            <thead cTableColor="dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Image Url</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let brand of brands">
+                <td>{{ brand.id }}</td>
+                <td>{{ brand.name }}</td>
+                <td>{{ brand.description }}</td>
+                <td>{{ brand.imageUrl }}</td>
+                <td>
+                    <button>
+                        <!-- <svg cIcon class="me-2" name="cil-bell"></svg> -->Edit
+                    </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </ng-container>
+      </c-card-body>
+    </c-card>
+  </c-col>
+</c-row>
